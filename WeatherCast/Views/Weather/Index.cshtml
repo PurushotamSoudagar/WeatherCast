@@ -1,0 +1,14 @@
+﻿@model WeatherCast.Models.WeatherRequest
+@{
+    ViewData["Title"] = "Weather Search";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary">🌤️ Weather Search</h2>
+    <form asp-action="Index" method="post">
+        <div class="mb-3">
+            <input asp-for="City" class="form-control" placeholder="Enter city name" />
+        </div>
+        <button type="submit" class="btn btn-primary">Get Weather</button>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+﻿@model WeatherCast.Models.WeatherResponse
+@{
+    ViewData["Title"] = "Weather Result";
+}
+
+<div class="container mt-5">
+    <h2 class="text-success">🌍 Weather Details</h2>
+
+    @if (Model != null)
+    {
+        <div class="card shadow p-3 mt-4">
+            <h4>@Model.City</h4>
+            <p><b>Description:</b> @Model.Description</p>
+            <p><b>Temperature:</b> @Model.Temperature °C</p>
+            <p><b>Feels Like:</b> @Model.FeelsLike °C</p>
+        </div>
+        <div class="row col-md-4">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Weather" asp-action="Index"><i class="fa-solid fa-arrow-left">Go back</i></a>
+            
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">No weather data available.</div>
+    }
+</div>
